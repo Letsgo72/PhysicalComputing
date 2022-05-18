@@ -1,5 +1,6 @@
 !/bin/sh
 mpc crop &&
-  mpc current -f %albumartist% |
-  xargs -r -E ' ' -I Artist mpc findadd albumartist Artist &&
-  mpc shuffle
+  mpc current -f %album% |
+  xargs -r -E ' ' -I Album mpc findadd album Album &&
+  mpc del 0 &&
+  mpc play
